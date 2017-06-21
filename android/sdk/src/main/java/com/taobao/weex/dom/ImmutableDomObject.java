@@ -30,6 +30,7 @@ import static com.taobao.weex.dom.WXDomObject.DESTROYED;
 
 public interface ImmutableDomObject {
   String getRef();
+  @Deprecated
   @NonNull Spacing getMargin();
   float getLayoutWidth();
   float getLayoutHeight();

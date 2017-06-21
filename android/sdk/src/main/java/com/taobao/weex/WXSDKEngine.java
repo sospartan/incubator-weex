@@ -25,6 +25,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.facebook.soloader.SoLoader;
 import com.taobao.weex.adapter.IDrawableLoader;
 import com.taobao.weex.adapter.IWXHttpAdapter;
 import com.taobao.weex.adapter.IWXImgLoaderAdapter;
@@ -166,7 +167,7 @@ public class WXSDKEngine {
   private static void doInitInternal(final Application application,final InitConfig config){
     WXEnvironment.sApplication = application;
     WXEnvironment.JsFrameworkInit = false;
-
+    SoLoader.init(application,false);
     WXBridgeManager.getInstance().post(new Runnable() {
       @Override
       public void run() {
