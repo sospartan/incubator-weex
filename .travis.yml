@@ -5,11 +5,14 @@ language: node_js
 node_js: 7.6
 rvm: 2.0.0
 env:
-  - TEST_SUITE=ios
-  - TEST_SUITE=danger
-  - TEST_SUITE=jsfm
-  - TEST_SUITE=android
-  - TEST_SUITE=release
+  global:
+      - DANGER_GITHUB_API_TOKEN=8b3d1a1cf1dc676ea15a1a075291232eca55f88a
+  matrix:
+      - TEST_SUITE=ios
+      - TEST_SUITE=danger
+      - TEST_SUITE=jsfm
+      - TEST_SUITE=android
+      - TEST_SUITE=release
 matrix:
     fast_finish: true
     exclude:
